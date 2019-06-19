@@ -1,0 +1,17 @@
+<div *ngFor="let message of messages">
+    {{message.text}}
+    <!-- {{message.img}} -->
+    <img *ngIf="message.img" [src]="message.img" class="img-messages">
+</div>
+
+<input [(ngModel)]="message" (keyup)="$event.keyCode == 13 && sendMessage()" />
+<button (click)="sendMessage()">Send</button>
+<br/>
+<webcam [height]="200" [width]="150" [trigger]="triggerObservable" (imageCapture)="handleImage($event)" *ngIf="showWebcam"
+[allowCameraSwitch]="allowCameraSwitch" [switchCamera]="nextWebcamObservable"
+[videoOptions]="videoOptions"
+[imageQuality]="1"
+(cameraSwitched)="cameraWasSwitched($event)"
+(initError)="handleInitError($event)"
+></webcam>
+<button class="actionBtn" (click)="triggerSnapshot();">Take A Snapshot</button>

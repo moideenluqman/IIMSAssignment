@@ -15,5 +15,5 @@ run follwing cmds <br />
  `cd client` <br />
  `npm install`  [for install dependencies] <br />
  `ng serve` [for running application] <br />
- 
+  open your browser on `http://localhost:4200/`
 
